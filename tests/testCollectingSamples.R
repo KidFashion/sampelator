@@ -247,10 +247,15 @@ getTwoStage(purpose = "estimation", desiredDifference = 0.05, sampleSize= NA,
 #   sampleSize desiredDifference power
 # 1       1182              0.05    NA
 
+if (Sys.getenv("APPVEYOR") == "True")
+{
+    preamble <- Sys.getenv("APPVEYOR_BUILD_FOLDER")
+} else {
+    preamble <- "~/git/sampelator"
+}
 
-
-inputData <- read.table("./inst/extdata/exampleData4.txt", header = TRUE)
+inputData <- read.table(file.path(preamble,"/inst/extdata/exampleData4.txt"), header = TRUE)
 collapsedData <- collapseData(inputData = inputData, collapseVariable = "Month")
 head(collapsedData)
 
-inputData <- read.csv("./inst/extdata/exampleDataSample.csv", header = TRUE)
+inputData <- read.csv(file.path(preamble,"/inst/extdata/exampleDataSample.csv"), header = TRUE)

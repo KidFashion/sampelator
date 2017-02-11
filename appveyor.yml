@@ -27,8 +27,8 @@ on_failure:
   - appveyor PushArtifact failure.zip
 
 on_success:
-  - Rscript -e 'library(covr); codecov()'
-  
+  - Rscript -e 'library(covr); codecov();'
+
 artifacts:
   - path: '*.Rcheck\**\*.log'
     name: Logs

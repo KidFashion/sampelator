@@ -249,8 +249,8 @@ getTwoStage(purpose = "estimation", desiredDifference = 0.05, sampleSize= NA,
 
 
 
-inputData <- read.table("~/git/sampelator/sampelator/inst/extdata/exampleData4.txt", header = TRUE)
+inputData <- read.table("~/git/sampelator/inst/extdata/exampleData4.txt", header = TRUE)
 collapsedData <- collapseData(inputData = inputData, collapseVariable = "Month")
 head(collapsedData)
 
-inputData <- read.csv("~/git/sampelator/sampelator/inst/extdata/exampleDataSample.csv", header = TRUE)
+inputData <- read.csv("~/git/sampelator/inst/extdata/exampleDataSample.csv", header = TRUE)
